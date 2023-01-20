@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html" />
+    <title>Result Expose</title>
+    <style>
+      .expose {
+        display: block;
+        white-space: pre;
+        font-family: Monospace;
+        font-size: 15px;
+        border-left: 20px solid silver;
+        background-color: whitesmoke;
+        margin: 30px 0;
+        }
+      .result {
+        border-top: 20px solid silver;
+        font-size: 15px;
+        background-color: black;
+        color: silver;
+        margin: 0;
+        padding: 20px;
+        }
+    </style>
+    <script>
+      function result( output = '' ) {
+        let D = document;
+        let S = D.currentScript;
+        let O = D.createElement( 'pre' );
+        O.className = 'result';
+        O.textContent = output;
+        S.parentElement.insertBefore( O, S );
+        S.classList.add( 'expose' );
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+    	result( 9 )
+    </script>
+  </body>
+</html>
